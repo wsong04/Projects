@@ -31,26 +31,7 @@ namespace Numbers
     public void FibonacciSequence()
     {
       var n = EnteraNumber();
-      if (n < 1) return;
-      var prev = 1;
-      Console.WriteLine(prev);
-      if (n == 1)
-      {
-        return;
-      }
-      var current = 1;
-      Console.WriteLine(current);
-      if (n == 2)
-      {
-        return;
-      }
-      for (var i = 3; i <= n; i++)
-      {
-        var temp = prev + current;
-        Console.WriteLine(temp);
-        prev = current;
-        current = temp;
-      }
+      GenerateFibonacciSequence(n);
     }
 
     #region Private Methods
@@ -145,6 +126,30 @@ namespace Numbers
       var decimalIndex = bigDecimal.IndexOf('.');
       if (n == 0) return bigDecimal.Substring(0, decimalIndex);
       return bigDecimal.Substring(0, decimalIndex + n + 1);
+    }
+
+    private void GenerateFibonacciSequence(int n)
+    {
+      if (n < 1) return;
+      var prev = 1;
+      Console.WriteLine(prev);
+      if (n == 1)
+      {
+        return;
+      }
+      var current = 1;
+      Console.WriteLine(current);
+      if (n == 2)
+      {
+        return;
+      }
+      for (var i = 3; i <= n; i++)
+      {
+        var temp = prev + current;
+        Console.WriteLine(temp);
+        prev = current;
+        current = temp;
+      }
     }
     #endregion
   }

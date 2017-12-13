@@ -1,0 +1,7 @@
+C:\github\Projects\Projects\Numbers\bin\Debug\Numbers.exe.config
+C:\github\Projects\Numbers\bin\Debug\Numbers.exe.config
+C:\github\Projects\Numbers\bin\Debug\Numbers.exe
+C:\github\Projects\Numbers\bin\Debug\Numbers.pdb
+C:\github\Projects\Numbers\obj\Debug\Numbers.csprojResolveAssemblyReference.cache
+C:\github\Projects\Numbers\obj\Debug\Numbers.exe
+C:\github\Projects\Numbers\obj\Debug\Numbers.pdb

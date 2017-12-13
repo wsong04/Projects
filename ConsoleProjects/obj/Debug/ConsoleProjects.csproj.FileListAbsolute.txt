@@ -1,3 +1,6 @@
 C:\github\Projects\ConsoleProjects\bin\Debug\Numbers.exe.config
 C:\github\Projects\ConsoleProjects\obj\Debug\Numbers.exe
 C:\github\Projects\ConsoleProjects\obj\Debug\Numbers.pdb
+C:\github\Projects\ConsoleProjects\bin\Debug\Numbers.exe
+C:\github\Projects\ConsoleProjects\bin\Debug\Numbers.pdb
+C:\github\Projects\ConsoleProjects\obj\Debug\ConsoleProjects.csprojResolveAssemblyReference.cache

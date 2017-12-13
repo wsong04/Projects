@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CognitioConsulting.Numerics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace Numbers
 {
   class Numbers
   {
+    #region FindPItotheNthDigit
     public void FindPItotheNthDigit()
     {
       var number = EnteraNumber();
@@ -15,7 +17,18 @@ namespace Numbers
       pi = AddDecimalPoint(pi);
       Console.WriteLine(pi);
     }
+    #endregion
 
+    #region FindetotheNthDigit
+    public void FindetotheNthDigit()
+    {
+      var number = EnteraNumber();
+      var e = Calculatee();
+      Console.WriteLine(ToNDecimalPlaces(e.ToString(), number));
+    }
+    #endregion
+
+    #region Private Methods
     private int EnteraNumber()
     {
       Console.Write("Enter a number: ");
@@ -81,10 +94,33 @@ namespace Numbers
       return pi.Length == 1 ? pi : pi.Substring(0, 1) + "." + pi.Substring(1);
     }
 
-    public void FindetotheNthDigit()
+    private BigDecimal Factorial(int n)
     {
-      var number = EnteraNumber();
-
+      if (n == 0) return 1;
+      BigDecimal factorial = 1;
+      for (var i = 1; i <= n; i++)
+      {
+        factorial *= i;
+      }
+      return factorial;
     }
+
+    private BigDecimal Calculatee()
+    {
+      BigDecimal e = 0;
+      for (var i = 0; i < 100; i++)
+      {
+        e += 1.0 / Factorial(i);
+      }
+      return e;
+    }
+
+    private string ToNDecimalPlaces(string bigDecimal, int n)
+    {
+      var decimalIndex = bigDecimal.IndexOf('.');
+      if (n == 0) return bigDecimal.Substring(0, decimalIndex);
+      return bigDecimal.Substring(0, decimalIndex + n + 1);
+    }
+    #endregion
   }
 }

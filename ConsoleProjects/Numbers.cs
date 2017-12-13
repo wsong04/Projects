@@ -44,6 +44,30 @@ namespace Numbers
       }
     }
 
+    public void NextPrimeNumber()
+    {
+      var n = EnteraNumber();
+      var a = new bool[n + 1];
+      for (var i = 0; i < a.Length; i++)
+      {
+        a[i] = true;
+      }
+      for (var i = 2; i <= Math.Sqrt(n); i++)
+      {
+        if (a[i])
+        {
+          for (var j = i * i; j <= n; j += i)
+          {
+            a[j] = false;
+          }
+        }
+      }
+      for (var i = 2; i <= n; i++)
+      {
+        if (a[i]) Console.WriteLine(i);
+      }
+    }
+
     #region Private Methods
     private int EnteraNumber()
     {

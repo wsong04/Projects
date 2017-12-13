@@ -17,6 +17,7 @@ namespace Numbers
       Console.WriteLine("2. Find e to the Nth Digit");
       Console.WriteLine("3. Fibonacci Sequence");
       Console.WriteLine("4. Prime Factorization");
+      Console.WriteLine("5. Next Prime Number");
       Console.Write("Your choice: ");
       var line = Console.ReadLine();
       var choice = Convert.ToInt32(line);
@@ -34,6 +35,9 @@ namespace Numbers
           break;
         case 4:
           numbers.PrimeFacorization();
+          break;
+        case 5:
+          numbers.NextPrimeNumber();
           break;
         default:
           break;

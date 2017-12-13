@@ -34,6 +34,16 @@ namespace Numbers
       GenerateFibonacciSequence(n);
     }
 
+    public void PrimeFacorization()
+    {
+      var n = EnteraNumber();
+      var factors = PrimeFactors(n);
+      foreach (var i in factors)
+      {
+        Console.WriteLine(i);
+      }
+    }
+
     #region Private Methods
     private int EnteraNumber()
     {
@@ -150,6 +160,20 @@ namespace Numbers
         prev = current;
         current = temp;
       }
+    }
+
+    private List<int> PrimeFactors(int n)
+    {
+      List<int> factors = new List<int>();
+      for (var i=2; i<=n; i++)
+      {
+        while (n % i == 0)
+        {
+          factors.Add(i);
+          n /= i;
+        }
+      }
+      return factors;
     }
     #endregion
   }

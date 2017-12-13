@@ -14,6 +14,7 @@ namespace Numbers
 
       Console.WriteLine("Please specify the project you want to run: ");
       Console.WriteLine("1. Find PI to the Nth Digit");
+      Console.WriteLine("2. Find e to the Nth Digit");
       Console.Write("Your choice: ");
       var line = Console.ReadLine();
       var choice = Convert.ToInt32(line);
@@ -22,6 +23,9 @@ namespace Numbers
       {
         case 1:
           numbers.FindPItotheNthDigit();
+          break;
+        case 2:
+          numbers.FindetotheNthDigit();
           break;
         default:
           break;

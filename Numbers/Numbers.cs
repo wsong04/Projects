@@ -10,12 +10,17 @@ namespace Numbers
   {
     public void FindPItotheNthDigit()
     {
-      Console.Write("Enter a number: ");
-      var line = Console.ReadLine();
-      var decimalPlaces = Convert.ToInt32(line);
-      var pi = CalculatePi(decimalPlaces);
+      var number = EnteraNumber();
+      var pi = CalculatePi(number);
       pi = AddDecimalPoint(pi);
       Console.WriteLine(pi);
+    }
+
+    private int EnteraNumber()
+    {
+      Console.Write("Enter a number: ");
+      var line = Console.ReadLine();
+      return Convert.ToInt32(line);
     }
 
     private string CalculatePi(int digits)
@@ -74,6 +79,12 @@ namespace Numbers
     private string AddDecimalPoint(string pi)
     {
       return pi.Length == 1 ? pi : pi.Substring(0, 1) + "." + pi.Substring(1);
+    }
+
+    public void FindetotheNthDigit()
+    {
+      var number = EnteraNumber();
+
     }
   }
 }

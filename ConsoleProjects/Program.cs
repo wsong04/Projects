@@ -15,6 +15,7 @@ namespace Numbers
       Console.WriteLine("Please specify the project you want to run: ");
       Console.WriteLine("1. Find PI to the Nth Digit");
       Console.WriteLine("2. Find e to the Nth Digit");
+      Console.WriteLine("3. Fibonacci Sequence");
       Console.Write("Your choice: ");
       var line = Console.ReadLine();
       var choice = Convert.ToInt32(line);
@@ -26,6 +27,9 @@ namespace Numbers
           break;
         case 2:
           numbers.FindetotheNthDigit();
+          break;
+        case 3:
+          numbers.FibonacciSequence();
           break;
         default:
           break;

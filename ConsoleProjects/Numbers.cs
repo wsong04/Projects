@@ -12,8 +12,8 @@ namespace Numbers
     #region FindPItotheNthDigit
     public void FindPItotheNthDigit()
     {
-      var number = EnteraNumber();
-      var pi = CalculatePi(number);
+      var n = EnteraNumber();
+      var pi = CalculatePi(n);
       pi = AddDecimalPoint(pi);
       Console.WriteLine(pi);
     }
@@ -22,11 +22,36 @@ namespace Numbers
     #region FindetotheNthDigit
     public void FindetotheNthDigit()
     {
-      var number = EnteraNumber();
+      var n = EnteraNumber();
       var e = Calculatee();
-      Console.WriteLine(ToNDecimalPlaces(e.ToString(), number));
+      Console.WriteLine(ToNDecimalPlaces(e.ToString(), n));
     }
     #endregion
+
+    public void FibonacciSequence()
+    {
+      var n = EnteraNumber();
+      if (n < 1) return;
+      var prev = 1;
+      Console.WriteLine(prev);
+      if (n == 1)
+      {
+        return;
+      }
+      var current = 1;
+      Console.WriteLine(current);
+      if (n == 2)
+      {
+        return;
+      }
+      for (var i = 3; i <= n; i++)
+      {
+        var temp = prev + current;
+        Console.WriteLine(temp);
+        prev = current;
+        current = temp;
+      }
+    }
 
     #region Private Methods
     private int EnteraNumber()

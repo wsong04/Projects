@@ -9,7 +9,6 @@ namespace Numbers
 {
   class Numbers
   {
-    #region FindPItotheNthDigit
     public void FindPItotheNthDigit()
     {
       var n = EnteraNumber();
@@ -17,16 +16,13 @@ namespace Numbers
       pi = AddDecimalPoint(pi);
       Console.WriteLine(pi);
     }
-    #endregion
 
-    #region FindetotheNthDigit
     public void FindetotheNthDigit()
     {
       var n = EnteraNumber();
       var e = Calculatee();
       Console.WriteLine(ToNDecimalPlaces(e.ToString(), n));
     }
-    #endregion
 
     public void FibonacciSequence()
     {
@@ -66,6 +62,28 @@ namespace Numbers
       {
         if (a[i]) Console.WriteLine(i);
       }
+    }
+
+    public void ChangeReturnProgram()
+    {
+      Console.Write("Enter a cost: ");
+      var line = Console.ReadLine();
+      var cost = Convert.ToDecimal(line);
+      Console.Write("Enter the amount of money given: ");
+      line = Console.ReadLine();
+      var amount = Convert.ToDecimal(line);
+
+      var change = amount - cost;
+      int temp = (int)(change * 100);
+      var quaters = temp / 25;
+      temp = temp % 25;
+      var dimes = temp / 10;
+      temp = temp % 10;
+      var nickels = temp / 5;
+      temp = temp % 5;
+      var pennies = temp;
+      Console.WriteLine($"The change is {change}.");
+      Console.WriteLine($"Quarters: {quaters}, dimes: {dimes}, nickels: {nickels}, pennies: {pennies}");
     }
 
     #region Private Methods

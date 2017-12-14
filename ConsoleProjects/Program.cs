@@ -18,6 +18,7 @@ namespace Numbers
       Console.WriteLine("3. Fibonacci Sequence");
       Console.WriteLine("4. Prime Factorization");
       Console.WriteLine("5. Next Prime Number");
+      Console.WriteLine("6. Change Return Program");
       Console.Write("Your choice: ");
       var line = Console.ReadLine();
       var choice = Convert.ToInt32(line);
@@ -38,6 +39,9 @@ namespace Numbers
           break;
         case 5:
           numbers.NextPrimeNumber();
+          break;
+        case 6:
+          numbers.ChangeReturnProgram();
           break;
         default:
           break;

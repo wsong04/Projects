@@ -1,1 +1,0 @@
-C:\github\Projects\Calculator\bin\Debug\Calculator.exe.config

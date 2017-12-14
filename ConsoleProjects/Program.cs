@@ -19,6 +19,7 @@ namespace Numbers
       Console.WriteLine("4. Prime Factorization");
       Console.WriteLine("5. Next Prime Number");
       Console.WriteLine("6. Change Return Program");
+      Console.WriteLine("7. Binary Decimal Converter");
       Console.Write("Your choice: ");
       var line = Console.ReadLine();
       var choice = Convert.ToInt32(line);
@@ -42,6 +43,9 @@ namespace Numbers
           break;
         case 6:
           numbers.ChangeReturnProgram();
+          break;
+        case 7:
+          numbers.BinaryDecimalConverter();
           break;
         default:
           break;

@@ -86,6 +86,22 @@ namespace Numbers
       Console.WriteLine($"Quarters: {quaters}, dimes: {dimes}, nickels: {nickels}, pennies: {pennies}");
     }
 
+    public void BinaryDecimalConverter()
+    {
+      Console.Write("Convert binary to decimal? (y/n): ");
+      var mode = Console.ReadLine();
+      Console.Write("Enter a number: ");
+      var line = Console.ReadLine();
+      if (mode.Equals("y", StringComparison.OrdinalIgnoreCase))
+      {
+        ConvertBinarytoDecimal(line);
+      }
+      else
+      {
+        ConvertDecimaltoBinary(line);
+      }
+    }
+
     #region Private Methods
     private int EnteraNumber()
     {
@@ -216,6 +232,23 @@ namespace Numbers
         }
       }
       return factors;
+    }
+
+    private void ConvertBinarytoDecimal(string n)
+    {
+      //var a = n.ToCharArray();
+      //var result = 0;
+      //for (var i=0; i<a.Length; i++)
+      //{
+      //  result += (int)Char.GetNumericValue(a[i]) * (int)Math.Pow(2, a.Length - i - 1);
+      //}
+      //Console.WriteLine(result);
+      Console.WriteLine(Convert.ToInt32(n, 2));
+    }
+
+    private void ConvertDecimaltoBinary(string n)
+    {
+      Console.WriteLine(Convert.ToString(Convert.ToInt32(n), 2));
     }
     #endregion
   }

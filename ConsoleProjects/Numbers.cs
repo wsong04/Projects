@@ -1,6 +1,8 @@
 ﻿using CognitioConsulting.Numerics;
+using GoogleMaps.LocationServices;
 using System;
 using System.Collections.Generic;
+using System.Device.Location;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -99,6 +101,31 @@ namespace Numbers
       else
       {
         ConvertDecimaltoBinary(line);
+      }
+    }
+
+    public void DistanceBetweenTwoCities()
+    {
+      Console.Write("Enter city 1: ");
+      var city1 = Console.ReadLine();
+      Console.Write("Enter city 2: ");
+      var city2 = Console.ReadLine();
+      Console.Write("Enter unit of distance (km/mi): ");
+      var unit = Console.ReadLine();
+
+      var point1 = FindCityCoordinates(city1);
+      var point2 = FindCityCoordinates(city2);
+      var coord1 = new GeoCoordinate(point1.Latitude, point1.Longitude);
+      var coord2 = new GeoCoordinate(point2.Latitude, point2.Longitude);
+      var distanceInMeters = coord1.GetDistanceTo(coord2);
+      if ("mi".Equals(unit))
+      {
+        Console.WriteLine((int)(distanceInMeters / 1000 / 1.60934) + " mi");
+      }
+      else
+      {
+        //Console.WriteLine((int)(distanceInMiles * 1.60934) + " km");
+        Console.WriteLine((int)(distanceInMeters / 1000) + "km");
       }
     }
 
@@ -249,6 +276,13 @@ namespace Numbers
     private void ConvertDecimaltoBinary(string n)
     {
       Console.WriteLine(Convert.ToString(Convert.ToInt32(n), 2));
+    }
+
+    private MapPoint FindCityCoordinates(string address)
+    {
+      var locationService = new GoogleLocationService();
+      var point = locationService.GetLatLongFromAddress(address);
+      return point;
     }
     #endregion
   }

@@ -20,6 +20,7 @@ namespace Numbers
       Console.WriteLine("5. Next Prime Number");
       Console.WriteLine("6. Change Return Program");
       Console.WriteLine("7. Binary Decimal Converter");
+      Console.WriteLine("8. Distance Between Two Cities");
       Console.Write("Your choice: ");
       var line = Console.ReadLine();
       var choice = Convert.ToInt32(line);
@@ -46,6 +47,9 @@ namespace Numbers
           break;
         case 7:
           numbers.BinaryDecimalConverter();
+          break;
+        case 8:
+          numbers.DistanceBetweenTwoCities();
           break;
         default:
           break;
